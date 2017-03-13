@@ -1,1 +1,2 @@
 # MorseTranslator
+Translator Morse <-> Alphabet
