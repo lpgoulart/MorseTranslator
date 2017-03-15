@@ -21,7 +21,7 @@ void Port2Morse(int len, std::string& frase)
             if(toupper(frase.at(i)) == a[j])
             {
 		 		cout << m[j] << " ";
-		 		File << m[j] << "/";
+		 		File << m[j] << " ";
 				break;
 	    	}
      	}
