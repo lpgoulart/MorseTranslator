@@ -54,7 +54,7 @@ int main(){
 						len = frase.length();
 						frase.insert(len,aux);
 			    		cout << frase << endl; 
-		        		Port2Morse(len,frase); 
+		        		PortRead(len,frase); 
 					}
 				}else cout << endl << "O arquivo nao existe...ainda" << endl;
 
@@ -91,7 +91,7 @@ int main(){
 						len = frase.length();
 						frase.insert(len,aux);
 			    		cout << frase << endl; 
-		        		Morse2Port(len,frase); 
+		        		MorseRead(len,frase); 
 					}
 				}else cout << endl << "O arquivo nao existe...ainda" << endl;
 
