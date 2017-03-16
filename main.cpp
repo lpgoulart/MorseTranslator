@@ -35,6 +35,7 @@ int main(){
 		cout << "Selecione sua opcao: ";
 		cin >> op;
 		cin.ignore();
+		cout << "\033[2J\033[1;1H";
 		
 		switch(op)
 		{
@@ -61,6 +62,7 @@ int main(){
 			break;
 			default:
 			break;
+
 		}		
         cout << endl;
 		break;
@@ -72,6 +74,7 @@ int main(){
 		cout << "Selecione sua opcao: ";
 		cin >> op;
 		cin.ignore();
+		cout << "\033[2J\033[1;1H";
 		
 		switch(op)
 		{
