@@ -5,10 +5,14 @@
 #include "library.h"
 using namespace std;
 
-void Port2Morse(int len, std::string& frase)
+/**
+*	@param len -> tamanho da string inserida
+*	@param frase -> string inserida
+*/
+
+void PortRead(int len, std::string& frase)
 {
-	std::fstream File;
-  	File.open ("Port2Morse.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+
 	char a[36] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
 	string m[36] = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----" };
 	
@@ -21,11 +25,9 @@ void Port2Morse(int len, std::string& frase)
             if(toupper(frase.at(i)) == a[j])
             {
 		 		cout << m[j] << " ";
-		 		File << m[j] << " ";
 				break;
 	    	}
      	}
    	} 
-   		File << endl;
-   		cout << endl;
+   	cout << endl;
 }

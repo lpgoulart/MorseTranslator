@@ -5,10 +5,14 @@
 #include <cctype>
 using namespace std;
 
-void Morse2Port(int len, std::string& frase)
+/**
+*   @param len -> tamanho da string inserida
+*   @param frase -> string inserida
+*/
+
+void MorseRead(int len, std::string& frase)
 {	
-    std::fstream File;
-    File.open ("Morse2Port.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+
     cout << "Seu texto eh: ";	
 	for(int i = 0; i < len; i++)
 	{
@@ -25,19 +29,16 @@ void Morse2Port(int len, std::string& frase)
                     {
                     	i += 5;
                     	cout << "5 ";
-                        File << "5 ";
                     }
                     else if(frase.at(i+4) == '-')
                     {
                     	i += 5;
                     	cout << "4 ";
-                        File << "4 ";
                     }
                     else
                     {
                     	i += 4;
                     	cout << "H ";
-                        File << "H ";
                     }
                 }
                 else if(frase.at(i+3) == '-')//V
@@ -46,13 +47,11 @@ void Morse2Port(int len, std::string& frase)
                     {
                     	i += 5;
                     	cout << "3 ";
-                        File << "3 ";
                     }
                     else 
                     {
                     	i+= 4;
                     	cout << "V ";
-                        File << "V ";
                     }
                 }
                 
@@ -60,7 +59,6 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 3;
                     cout << "S ";
-                    File << "S ";
                 }
             }
             else if(frase.at(i+2) == '-')//U
@@ -69,7 +67,6 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 4;
                     cout << "F ";
-                    File << "F ";
                 }
                 else if(frase.at(i+3) == '-')//-
                 {
@@ -77,13 +74,11 @@ void Morse2Port(int len, std::string& frase)
                     {
                     	i += 5;
                     	cout << "2 ";
-                        File << "2 ";
                     }
                     else
                     {
                     	i += 4;
                     	cout << "- ";
-                        File << "- ";
                     }
                 }
                 
@@ -91,7 +86,6 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 3;
                     cout << "U ";
-                    File << "U ";
                 }
             }
             
@@ -99,7 +93,6 @@ void Morse2Port(int len, std::string& frase)
             {
                 i += 2;
                 cout << "I ";
-                File << "I ";
             }
         }
         else if(frase.at(i+1) == '-')//A
@@ -110,14 +103,12 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 4;
                     cout << "L ";
-                    File << "L ";
                 }
                 
                 else
                 {
                     i += 3;
                     cout << "R ";
-                    File << "R ";
                 }
             }
             else if(frase.at(i+2) == '-')//W
@@ -126,7 +117,6 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 4;
                     cout << "P ";
-                    File << "P ";
                 }
                 else if(frase.at(i+3) == '-')//J
                 {
@@ -134,13 +124,11 @@ void Morse2Port(int len, std::string& frase)
                 	{
                 		i += 5;
                 		cout << "1 ";
-                        File << "1 ";
                 	}
                     else
                     {
                     	i += 4;
                     	cout << "J ";
-                        File << "J ";
                     }
                 }
                 
@@ -148,7 +136,6 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 3;
                     cout << "W ";
-                    File << "W ";
                 }
             }
             
@@ -156,14 +143,12 @@ void Morse2Port(int len, std::string& frase)
             {
                 i += 2;
                 cout << "A "; 
-                File << "A ";
             }
         }
         
         else
         {
         cout << "E ";
-        File << "E ";
         }
     }
 
@@ -179,27 +164,23 @@ void Morse2Port(int len, std::string& frase)
                     	{
                     		i += 5;
                     		cout << "6 ";
-                            File << "6 ";
                     	}
                         else
                         {
                         	i += 4;
                         	cout << "B ";
-                            File << "B ";
                         }
                     }
                     else if(frase.at(i+3) == '-')//X
                     {
                         i += 4;
                         cout << "X ";
-                        File << "X ";
                     }
                     
                     else 
                     {
                         i += 3;
                         cout << "D ";
-                        File << "D ";
                     }
                 }
                 else if(frase.at(i+2) == '-')//K
@@ -208,20 +189,17 @@ void Morse2Port(int len, std::string& frase)
                     {
                         i += 4;
                         cout << "C ";
-                        File << "C ";
                     }
                     else if(frase.at(i+3) == '-')//Y
                     {
                         i += 4;
                         cout << "Y ";
-                        File << "Y ";
                     }
                     
                     else
                     {
                         i += 3;
                         cout << "K ";
-                        File << "K ";
                     }
                 }
             
@@ -229,7 +207,6 @@ void Morse2Port(int len, std::string& frase)
                 {
                     i += 2;
                     cout << "N ";
-                    File << "N ";
                 }
         }
         else if(frase.at(i+1) == '-')//M
@@ -242,27 +219,23 @@ void Morse2Port(int len, std::string& frase)
                     	{
                     		i += 5;
                     		cout << "7 ";
-                            File << "7 ";
                     	}
                         else 
                         {
                         	i += 4;
                         	cout << "Z ";
-                            File << "Z ";
                         }
                     }
                     else if(frase.at(i+3) == '-')//Q
                     {
                         i += 4;
                         cout << "Q ";
-                        File << "Q ";
                     }
                 
                     else
                     {
                         i += 3;
                         cout << "G ";
-                        File << "G ";
                     }
             }
             else if(frase.at(i+2) == '-')//O
@@ -273,13 +246,11 @@ void Morse2Port(int len, std::string& frase)
                     	{
                     		i += 5;
                     		cout << "8 ";
-                            File << "8 ";
                     	}
                         else
                         {
                         	i += 4;
                         	cout << ". ";
-                            File << ". ";
                         }
                     }
                     else if(frase.at(i+3) == '-')//NADA
@@ -288,19 +259,16 @@ void Morse2Port(int len, std::string& frase)
                     	{
                     		i += 5;
                     		cout << "9 ";
-                            File << "9 ";
                     	}
                     	else if(frase.at(i+4) == '-')//0
                     	{
                     		i += 5;
                     		cout << "0 ";
-                            File << "0 ";
                     	}
                         else 
                         {
                         	i += 4;
                         	cout << "NADA ";
-                            File << "NADA ";
                         }
                     }
                 
@@ -308,27 +276,23 @@ void Morse2Port(int len, std::string& frase)
                     {
                         i += 3;
                         cout << "O ";
-                        File << "O ";
                     }
             }
             
             else 
             {
                 i += 2;
-                cout << "M ";
-                File << "M ";    
+                cout << "M ";   
             }
         }
         
         else 
         {
             cout << "T ";
-            File << "T ";
         }
     }
 
     
 	}
 		cout << endl;
-        File << endl;
 }
