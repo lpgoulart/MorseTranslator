@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Morse Translator: Código-Fonte de /home/lpgoulart/MorseTranslator/src/Port2Morse.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,7 +22,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Translator
    </div>
   </td>
@@ -30,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.6 -->
+<!-- Gerado por Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 </script>
@@ -60,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
-      <li><a href="globals.html"><span>Arquivos&#160;Membros</span></a></li>
+      <li><a href="globals.html"><span>Membros&#160;dos&#160;Arquivos</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Arquivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,47 +88,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 <div class="title">Port2Morse.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="Port2Morse_8cpp.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="library_8h.html">library.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cctype&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="Port2Morse_8cpp.html#a491fbebbb3466da5383da0efe4b888dd">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="Port2Morse_8cpp.html#a491fbebbb3466da5383da0efe4b888dd">Port2Morse</a>(<span class="keywordtype">int</span> len, std::string&amp; frase)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::fstream File;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    File.open (<span class="stringliteral">&quot;../src/Port2Morse.txt&quot;</span>, std::fstream::in | std::fstream::out | std::fstream::app);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span> a[36] = { <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;J&#39;</span>, <span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;L&#39;</span>, <span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;O&#39;</span>, <span class="charliteral">&#39;P&#39;</span>, <span class="charliteral">&#39;Q&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;X&#39;</span>, <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;Z&#39;</span>, <span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;0&#39;</span>};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">string</span> m[36] = { <span class="stringliteral">&quot;.-&quot;</span>, <span class="stringliteral">&quot;-...&quot;</span>, <span class="stringliteral">&quot;-.-.&quot;</span>, <span class="stringliteral">&quot;-..&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>, <span class="stringliteral">&quot;..-.&quot;</span>, <span class="stringliteral">&quot;--.&quot;</span>, <span class="stringliteral">&quot;....&quot;</span>, <span class="stringliteral">&quot;..&quot;</span>, <span class="stringliteral">&quot;.---&quot;</span>, <span class="stringliteral">&quot;-.-&quot;</span>, <span class="stringliteral">&quot;.-..&quot;</span>, <span class="stringliteral">&quot;--&quot;</span>, <span class="stringliteral">&quot;-.&quot;</span>, <span class="stringliteral">&quot;---&quot;</span>, <span class="stringliteral">&quot;.--.&quot;</span>, <span class="stringliteral">&quot;--.-&quot;</span>, <span class="stringliteral">&quot;.-.&quot;</span>, <span class="stringliteral">&quot;...&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;..-&quot;</span>, <span class="stringliteral">&quot;...-&quot;</span>, <span class="stringliteral">&quot;.--&quot;</span>, <span class="stringliteral">&quot;-..-&quot;</span>, <span class="stringliteral">&quot;-.--&quot;</span>, <span class="stringliteral">&quot;--..&quot;</span>, <span class="stringliteral">&quot;.----&quot;</span>, <span class="stringliteral">&quot;..---&quot;</span>, <span class="stringliteral">&quot;...--&quot;</span>, <span class="stringliteral">&quot;....-&quot;</span>, <span class="stringliteral">&quot;.....&quot;</span>, <span class="stringliteral">&quot;-....&quot;</span>, <span class="stringliteral">&quot;--...&quot;</span>, <span class="stringliteral">&quot;---..&quot;</span>, <span class="stringliteral">&quot;----.&quot;</span>, <span class="stringliteral">&quot;-----&quot;</span> };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Seu texto eh: &quot;</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;i &lt; len; i++)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;       <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j &lt; 36; j++)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;       {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span>(toupper(frase.at(i)) == a[j])</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                cout &lt;&lt; m[j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                File &lt;&lt; m[j] &lt;&lt; <span class="stringliteral">&quot;/&quot;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    } </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        File &lt;&lt; endl;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        cout &lt;&lt; endl;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<a href="Port2Morse_8cpp.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="library_8h.html">library.h</a>&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cctype&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="Port2Morse_8cpp.html#a491fbebbb3466da5383da0efe4b888dd">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="Port2Morse_8cpp.html#a491fbebbb3466da5383da0efe4b888dd">Port2Morse</a>(<span class="keywordtype">int</span> len, std::string&amp; frase)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::fstream File;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    File.open (<span class="stringliteral">&quot;../src/Port2Morse.txt&quot;</span>, std::fstream::in | std::fstream::out | std::fstream::app);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span> a[36] = { <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;J&#39;</span>, <span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;L&#39;</span>, <span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;O&#39;</span>, <span class="charliteral">&#39;P&#39;</span>, <span class="charliteral">&#39;Q&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;X&#39;</span>, <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;Z&#39;</span>, <span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;0&#39;</span>};</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">string</span> m[36] = { <span class="stringliteral">&quot;.-&quot;</span>, <span class="stringliteral">&quot;-...&quot;</span>, <span class="stringliteral">&quot;-.-.&quot;</span>, <span class="stringliteral">&quot;-..&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>, <span class="stringliteral">&quot;..-.&quot;</span>, <span class="stringliteral">&quot;--.&quot;</span>, <span class="stringliteral">&quot;....&quot;</span>, <span class="stringliteral">&quot;..&quot;</span>, <span class="stringliteral">&quot;.---&quot;</span>, <span class="stringliteral">&quot;-.-&quot;</span>, <span class="stringliteral">&quot;.-..&quot;</span>, <span class="stringliteral">&quot;--&quot;</span>, <span class="stringliteral">&quot;-.&quot;</span>, <span class="stringliteral">&quot;---&quot;</span>, <span class="stringliteral">&quot;.--.&quot;</span>, <span class="stringliteral">&quot;--.-&quot;</span>, <span class="stringliteral">&quot;.-.&quot;</span>, <span class="stringliteral">&quot;...&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;..-&quot;</span>, <span class="stringliteral">&quot;...-&quot;</span>, <span class="stringliteral">&quot;.--&quot;</span>, <span class="stringliteral">&quot;-..-&quot;</span>, <span class="stringliteral">&quot;-.--&quot;</span>, <span class="stringliteral">&quot;--..&quot;</span>, <span class="stringliteral">&quot;.----&quot;</span>, <span class="stringliteral">&quot;..---&quot;</span>, <span class="stringliteral">&quot;...--&quot;</span>, <span class="stringliteral">&quot;....-&quot;</span>, <span class="stringliteral">&quot;.....&quot;</span>, <span class="stringliteral">&quot;-....&quot;</span>, <span class="stringliteral">&quot;--...&quot;</span>, <span class="stringliteral">&quot;---..&quot;</span>, <span class="stringliteral">&quot;----.&quot;</span>, <span class="stringliteral">&quot;-----&quot;</span> };</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Seu texto eh: &quot;</span>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;i &lt; len; i++)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;       <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j &lt; 36; j++)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;       {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span>(toupper(frase.at(i)) == a[j])</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                cout &lt;&lt; m[j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                File &lt;&lt; m[j] &lt;&lt; <span class="stringliteral">&quot;/&quot;</span>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    } </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        File &lt;&lt; endl;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        cout &lt;&lt; endl;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="library_8h_html"><div class="ttname"><a href="library_8h.html">library.h</a></div></div>
 <div class="ttc" id="Port2Morse_8cpp_html_a491fbebbb3466da5383da0efe4b888dd"><div class="ttname"><a href="Port2Morse_8cpp.html#a491fbebbb3466da5383da0efe4b888dd">Port2Morse</a></div><div class="ttdeci">void Port2Morse(int len, std::string &amp;frase)</div><div class="ttdoc">Traduz da linguagem do alfabeto para linguagem baseada morse. </div><div class="ttdef"><b>Definition:</b> <a href="Port2Morse_8cpp_source.html#l00012">Port2Morse.cpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Gerado em Segunda, 10 de Abril de 2017 21:43:31 para Morse Translator por &#160;<a href="http://www.doxygen.org/index.html">
+Gerado em Domingo, 23 de Abril de 2017 14:01:53 para Morse Translator por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>

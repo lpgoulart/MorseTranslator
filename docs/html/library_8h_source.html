@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Morse Translator: Código-Fonte de /home/lpgoulart/MorseTranslator/src/library.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,7 +22,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Translator
    </div>
   </td>
@@ -30,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.6 -->
+<!-- Gerado por Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 </script>
@@ -60,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
-      <li><a href="globals.html"><span>Arquivos&#160;Membros</span></a></li>
+      <li><a href="globals.html"><span>Membros&#160;dos&#160;Arquivos</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Arquivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,27 +88,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 <div class="title">library.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="library_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LIBRARY_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _LIBRARY_H_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#af33ac57a07ceca91a3bb5e3a0430211e">Morse2Port</a> (<span class="keywordtype">int</span> , std::string&amp; );</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#ae6efcb600dbeb7959dfad8d6c5cf453a">Port2Morse</a> (<span class="keywordtype">int</span> , std::string&amp; );</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#a67710191fcfe6540a41375ccacf99b5a">MorseRead</a> (<span class="keywordtype">int</span> , std::string&amp; );</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#af59601bba316481de61f80d2dff2c9a7">PortRead</a> (<span class="keywordtype">int</span> , std::string&amp; );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="library_8h_html_af59601bba316481de61f80d2dff2c9a7"><div class="ttname"><a href="library_8h.html#af59601bba316481de61f80d2dff2c9a7">PortRead</a></div><div class="ttdeci">void PortRead(int, std::string &amp;)</div><div class="ttdoc">Realiza somente a leitura do arquivo .txt. </div><div class="ttdef"><b>Definition:</b> <a href="PortRead_8cpp_source.html#l00013">PortRead.cpp:13</a></div></div>
+<a href="library_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LIBRARY_H_</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _LIBRARY_H_</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#af33ac57a07ceca91a3bb5e3a0430211e">Morse2Port</a> (<span class="keywordtype">int</span> , std::string&amp; );</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#ae6efcb600dbeb7959dfad8d6c5cf453a">Port2Morse</a> (<span class="keywordtype">int</span> , std::string&amp; );</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#a67710191fcfe6540a41375ccacf99b5a">MorseRead</a> (<span class="keywordtype">int</span> , std::string&amp; );</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="library_8h.html#af59601bba316481de61f80d2dff2c9a7">PortRead</a> (<span class="keywordtype">int</span> , std::string&amp; );</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="library_8h_html_af59601bba316481de61f80d2dff2c9a7"><div class="ttname"><a href="library_8h.html#af59601bba316481de61f80d2dff2c9a7">PortRead</a></div><div class="ttdeci">void PortRead(int, std::string &amp;)</div><div class="ttdoc">Realiza somente a leitura do arquivo .txt. </div><div class="ttdef"><b>Definition:</b> <a href="PortRead_8cpp_source.html#l00013">PortRead.cpp:13</a></div></div>
 <div class="ttc" id="library_8h_html_a67710191fcfe6540a41375ccacf99b5a"><div class="ttname"><a href="library_8h.html#a67710191fcfe6540a41375ccacf99b5a">MorseRead</a></div><div class="ttdeci">void MorseRead(int, std::string &amp;)</div><div class="ttdoc">Realiza somente a leitura do arquivo .txt. </div><div class="ttdef"><b>Definition:</b> <a href="MorseRead_8cpp_source.html#l00013">MorseRead.cpp:13</a></div></div>
 <div class="ttc" id="library_8h_html_ae6efcb600dbeb7959dfad8d6c5cf453a"><div class="ttname"><a href="library_8h.html#ae6efcb600dbeb7959dfad8d6c5cf453a">Port2Morse</a></div><div class="ttdeci">void Port2Morse(int, std::string &amp;)</div><div class="ttdoc">Traduz da linguagem do alfabeto para linguagem baseada morse. </div><div class="ttdef"><b>Definition:</b> <a href="Port2Morse_8cpp_source.html#l00012">Port2Morse.cpp:12</a></div></div>
 <div class="ttc" id="library_8h_html_af33ac57a07ceca91a3bb5e3a0430211e"><div class="ttname"><a href="library_8h.html#af33ac57a07ceca91a3bb5e3a0430211e">Morse2Port</a></div><div class="ttdeci">void Morse2Port(int, std::string &amp;)</div><div class="ttdoc">Traduz de Morse para linguagem escrita baseada no alfabeto. </div><div class="ttdef"><b>Definition:</b> <a href="Morse2Port_8cpp_source.html#l00013">Morse2Port.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Gerado em Segunda, 10 de Abril de 2017 21:43:31 para Morse Translator por &#160;<a href="http://www.doxygen.org/index.html">
+Gerado em Domingo, 23 de Abril de 2017 14:01:53 para Morse Translator por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>
