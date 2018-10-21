@@ -1,10 +1,6 @@
 # MorseTranslator
 Translator Morse <-> Alphabet
 
-*IMPORTANTE*
-	Os passos "2" em diante funcionam apenas em sistema operacional Ubuntu e variantes.
-**
-
 Siga os passos abaixo para executar o programa:
 
 1. Para adquirir os arquivos insira no cmd de sua máquina:
